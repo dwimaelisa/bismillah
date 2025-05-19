@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informasi Ikan & Promo</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#ffe6f0;}
+    header {background: linear-gradient(90deg, #ffc0cb, #add8e6); color:white; padding:20px; text-align:center;}
+    .container {max-width:1200px; margin:auto; padding:20px; background:white;}
+    .tabs {display:flex; flex-wrap:wrap; margin-bottom:20px;}
+    .tab {flex:1; text-align:center; padding:15px; background:#ffc0cb; cursor:pointer; border-radius:10px 10px 0 0;}
+    .tab:hover, .tab.active {background:#add8e6; color:white;}
+    .tab-content {display:none; padding:20px; background:white; border-radius:0 0 10px 10px;}
+    .tab-content.active {display:block;}
+    .search-bar {text-align:center; margin:20px 0;}
+    .search-bar input {padding:10px; width:80%; max-width:600px; border:1px solid #ccc; border-radius:5px;}
+    .item {margin-bottom:40px;}
+    .item img {width:100%; max-width:300px; border-radius:10px; display:block; margin:auto;}
+    .item-info {margin-top:10px; text-align:center;}
+    .item-info p {margin:5px 0;}
+    .description {text-align:center; margin-bottom:30px; font-style:italic; color:#555;}
+    footer {text-align:center; padding:15px; background:#add8e6; color:white; font-size:14px; margin-top:40px;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Informasi Ikan & Promo Pakan</h1>
+  </header>
+
+  <main class="container">
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Cari ikan atau pakan..." oninput="filterItems()">
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" data-target="tawar">Ikan Tawar</div>
+      <div class="tab" data-target="asin">Ikan Asin</div>
+      <div class="tab" data-target="hias">Ikan Hias</div>
+      <div class="tab" data-target="promo">Promo Pakan</div>
+    </div>
+
+    <!-- IKAN TAWAR -->
+    <div id="tawar" class="tab-content active">
+      <div class="description">Ikan air tawar cocok untuk konsumsi dan hiasan. Hidup di kolam, sungai, dan danau, serta banyak dibudidayakan di Indonesia.</div>
+
+      <div class="item" data-name="Gurame"><img src="gurame.webp" alt="Gurame"><div class="item-info"><p><strong>Nama Ikan:</strong> Gurame</p><p><strong>Deskripsi:</strong> Ikan favorit untuk masakan Sunda, dagingnya tebal dan gurih.</p><p><strong>Terjual di:</strong> Tokopedia, Shopee</p></div></div>
+      <div class="item" data-name="Lele"><img src="lele.jpg" alt="Lele"><div class="item-info"><p><strong>Nama Ikan:</strong> Lele</p><p><strong>Deskripsi:</strong> Ikan konsumsi populer, hidup di air tawar keruh, pertumbuhan cepat.</p><p><strong>Terjual di:</strong> Shopee, Tokopedia</p></div></div>
+      <div class="item" data-name="Patin"><img src="patin.jpg" alt="Patin"><div class="item-info"><p><strong>Nama Ikan:</strong> Patin</p><p><strong>Deskripsi:</strong> Dagingnya lembut dan gurih, cocok untuk asam pedas dan bakar.</p><p><strong>Terjual di:</strong> Bukalapak, Shopee</p></div></div>
+
+      <!-- Tambahan 15 ikan tawar -->
+      <div class="item" data-name="Nila"><img src="nila 2.jpg" alt="Nila"><div class="item-info"><p><strong>Nama Ikan:</strong> Nila</p><p><strong>Deskripsi:</strong> Ikan konsumsi populer, mudah dibudidayakan dan cepat panen.</p><p><strong>Terjual di:</strong> Shopee, Tokopedia</p></div></div>
+      <div class="item" data-name="Mas"><img src="mas.webp" alt="Mas"><div class="item-info"><p><strong>Nama Ikan:</strong> Mas</p><p><strong>Deskripsi:</strong> Ikan air tawar dengan rasa gurih, cocok untuk pepes dan bakar.</p><p><strong>Terjual di:</strong> Bukalapak, Shopee</p></div></div>
+      <div class="item" data-name="Baung"><img src="baung.jpg" alt="Baung"><div class="item-info"><p><strong>Nama Ikan:</strong> Baung</p><p><strong>Deskripsi:</strong> Ikan sungai berdaging putih lembut, cocok dimasak asam pedas.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Bawal"><img src="bawal.jpg" alt="Bawal"><div class="item-info"><p><strong>Nama Ikan:</strong> Bawal</p><p><strong>Deskripsi:</strong> Ikan dengan daging tebal dan sedikit duri, cocok dibakar atau digoreng.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <div class="item" data-name="Betok"><img src="betok.jpg" alt="Betok"><div class="item-info"><p><strong>Nama Ikan:</strong> Betok</p><p><strong>Deskripsi:</strong> Ikan kecil air tawar dengan rasa gurih dan nikmat digoreng.</p><p><strong>Terjual di:</strong> Bukalapak</p></div></div>
+      <div class="item" data-name="Sidat"><img src="sidat.jpg" alt="Sidat"><div class="item-info"><p><strong>Nama Ikan:</strong> Sidat</p><p><strong>Deskripsi:</strong> Ikan mirip belut, kandungan gizinya tinggi dan ekspor ke Jepang.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Belida"><img src="belida.jpg" alt="Belida"><div class="item-info"><p><strong>Nama Ikan:</strong> Belida</p><p><strong>Deskripsi:</strong> Ikan khas Palembang, dagingnya untuk pempek dan kerupuk.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <div class="item" data-name="Jambal"><img src="jabal.jpg" alt="Jambal"><div class="item-info"><p><strong>Nama Ikan:</strong> Jambal</p><p><strong>Deskripsi:</strong> Ikan yang dikenal dengan tekstur kenyal, enak digoreng.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Lele Dumbo"><img sralt="dum"><div class="item-info"><p><strong>Nama Ikan:</strong> Lele Dumbo</p><p><strong>Deskripsi:</strong> Lele besar dengan daging tebal, cepat tumbuh dan cocok untuk dibudidayakan.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <div class="item" data-name="Tilapia"><img src="tilapia.jpg" alt="Tilapia"><div class="item-info"><p><strong>Nama Ikan:</strong> Tilapia</p><p><strong>Deskripsi:</strong> Ikan dengan kandungan protein tinggi, cocok untuk berbagai olahan masakan.</p><p><strong>Terjual di:</strong> Bukalapak, Shopee</p></div></div>
+      <div class="item" data-name="Kakap"><img src="kakap.jpg" alt="Kakap"><div class="item-info"><p><strong>Nama Ikan:</strong> Kakap</p><p><strong>Deskripsi:</strong> Ikan predator dengan daging yang gurih dan banyak disukai masyarakat Indonesia.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <div class="item" data-name="Bancam"><img src="bancam.jpg" alt="Bancam"><div class="item-info"><p><strong>Nama Ikan:</strong> Bancam</p><p><strong>Deskripsi:</strong> Ikan yang hidup di sungai dan danau, enak untuk dipepes atau dibakar.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Gabus"><img src="gaus.png" alt="Gabus"><div class="item-info"><p><strong>Nama Ikan:</strong> Gabus</p><p><strong>Deskripsi:</strong> Dikenal juga sebagai ikan betutu, sangat lezat jika dimasak dengan kuah pedas.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+    </div>
+
+    <!-- IKAN ASIN -->
+    <div id="asin" class="tab-content">
+      <div class="description">Ikan asin adalah hasil olahan ikan segar yang diawetkan dengan garam. Cocok sebagai lauk tahan lama.</div>
+
+      <!-- Contoh isi Ikan Asin -->
+      <div class="item" data-name="Teri Asin"><img src="TERI.jpg"Teri Asin><div class="item-info"><p><strong>Nama Ikan:</strong> Teri Asin</p><p><strong>Deskripsi:</strong> Ikan kecil yang diawetkan dengan garam, enak digoreng sebagai lauk.</p><p><strong>Terjual di:</strong> Shopee, Bukalapak</p></div></div>
+      <div class="item" data-name="Peda Asin"><img src="peda.jpg" alt="Peda Asin"><div class="item-info"><p><strong>Nama Ikan:</strong> Peda Asin</p><p><strong>Deskripsi:</strong> Ikan asin khas Bali, sering digunakan untuk hidangan nasi jinggo.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Jambal Roti Asin"><img src="jambal asin.jpg" alt="Jambal Roti Asin"><div class="item-info"><p><strong>Nama Ikan:</strong> Jambal Roti Asin</p><p><strong>Deskripsi:</strong> Ikan asin jenis Jambal yang terkenal dengan kelezatannya setelah digoreng.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+
+      <!-- Tambahan 15 ikan asin lainnya -->
+      <div class="item" data-name="Cumi Asin"><img src="cumi asin.jpg" alt="Cumi Asin"><div class="item-info"><p><strong>Nama Ikan:</strong> Cumi Asin</p><p><strong>Deskripsi:</strong> Ikan cumi asin yang nikmat, sering dijadikan bahan bakar pempek.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Kakap Asin"><img src="kakap.jpg" alt="Kakap Asin"><div class="item-info"><p><strong>Nama Ikan:</strong> Kakap Asin</p><p><strong>Deskripsi:</strong> Daging kakap asin sangat cocok untuk diolah menjadi sambal goreng.</p><p><strong>Terjual di:</strong> Bukalapak</p></div></div>
+      <div class="item" data-name="Layur Asin"><img src="layur asin.jpg" alt="Layur Asin"><div class="item-info"><p><strong>Nama Ikan:</strong> Layur Asin</p><p><strong>Deskripsi:</strong> Ikan asin jenis Layur cocok untuk masakan sambal atau ditumis.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+
+      <!-- dst hingga total 15 ikan asin -->
+
+    </div>
+
+    <!-- IKAN HIAS -->
+    <div id="hias" class="tab-content">
+      <div class="description">Ikan hias mempercantik akuarium dan kolam dengan warna serta bentuknya yang menarik.</div>
+
+      <!-- Isi contoh ikan hias -->
+      <div class="item" data-name="Koki"><img src="koki.jpg" alt="Koki"><div class="item-info"><p><strong>Nama Ikan:</strong> Koki</p><p><strong>Deskripsi:</strong> Ikan hias air tawar yang memiliki bentuk tubuh bulat dan warna cerah.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <div class="item" data-name="Cupang"><img src="upang.jpg" alt="Cupang"><div class="item-info"><p><strong>Nama Ikan:</strong> Cupang</p><p><strong>Deskripsi:</strong> Ikan kecil dengan warna cerah dan sirip panjang, sering digunakan dalam kontes.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Guppy"><img src="guppy.jpg" alt="Guppy"><div class="item-info"><p><strong>Nama Ikan:</strong> Guppy</p><p><strong>Deskripsi:</strong> Ikan kecil yang populer di kalangan penggemar ikan hias, mudah dipelihara.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+
+      <!-- Tambahan 15 ikan hias lainnya -->
+      <div class="item" data-name="Louhan"><img src="laoham.jpg" alt="laoham"><div class="item-info"><p><strong>Nama Ikan:</strong> Louhan</p><p><strong>Deskripsi:</strong> Ikan hias populer dengan kepala besar, dikenal karena bentuk tubuh uniknya.</p><p><strong>Terjual di:</strong> Bukalapak</p></div></div>
+      <div class="item" data-name="Arwana"><img src="arwana.jpg" alt=""><div class="item-info"><p><strong>Nama Ikan:</strong> Arwana</p><p><strong>Deskripsi:</strong> Ikan besar dengan tubuh memanjang, sering dipelihara di akuarium besar.</p><p><strong>Terjual di:</strong> Tokopedia</p></div></div>
+      <div class="item" data-name="Neon Tetra"><img src="neon tetra.jpg" alt="Neon Tetra"><div class="item-info"><p><strong>Nama Ikan:</strong> Neon Tetra</p><p><strong>Deskripsi:</strong> Ikan kecil dengan warna biru neon yang mencolok, populer di akuarium.</p><p><strong>Terjual di:</strong> Shopee</p></div></div>
+      <!-- dst hingga total 15 ikan hias -->
+
+    </div>
+
+    <!-- PROMO PAKAN -->
+    <div id="promo" class="tab-content">
+      <div class="description">Dapatkan promo pakan ikan terbaik untuk menunjang pertumbuhan dan kesehatan ikan kesayangan Anda!</div>
+
+      <!-- Contoh promo pakan -->
+      <div class="item" data-name="Pelet Super"><img src="pelet super.jpg" alt="Pelet Super"><div class="item-info"><p><strong>Nama Pakan:</strong> Pelet Super</p><p><strong>Deskripsi:</strong> Pakan ikan premium yang cocok untuk berbagai jenis ikan konsumsi.</p><p><strong>Harga:</strong> Rp 50.000</p></div></div>
+      <div class="item" data-name="Pelet Premium"><img src="pelet.jpg" alt="Pelet Premium"><div class="item-info"><p><strong>Nama Pakan:</strong> Pelet Premium</p><p><strong>Deskripsi:</strong> Pelet dengan kandungan gizi tinggi, membuat ikan tumbuh lebih cepat.</p><p><strong>Harga:</strong> Rp 70.000</p></div></div>
+      <div class="item" data-name="Pelet Warna Plus"><img src="pelet warna.jpg" alt="Pelet Warna Plus"><div class="item-info"><p><strong>Nama Pakan:</strong> Pelet Warna Plus</p><p><strong>Deskripsi:</strong> Pakan dengan formula khusus untuk meningkatkan warna ikan hias.</p><p><strong>Harga:</strong> Rp 80.000</p></div></div>
+
+      <!-- Tambahan 15 promo pakan lainnya -->
+      <div class="item" data-name="Pakan Cacing"><img src="caong.jpg" alt="Pakan Cacing"><div class="item-info"><p><strong>Nama Pakan:</strong> Pakan Cacing</p><p><strong>Deskripsi:</strong> Cacing sebagai pakan alami yang sangat baik untuk ikan hias.</p><p><strong>Harga:</strong> Rp 20.000</p></div></div>
+      <div class="item" data-name="Pelet Ikan Mas"><img src="ikan mas.jpg" alt="Pelet Ikan Mas"><div class="item-info"><p><strong>Nama Pakan:</strong> Pelet Ikan Mas</p><p><strong>Deskripsi:</strong> Pelet berkualitas tinggi untuk ikan mas, meningkatkan kualitas daging ikan.</p><p><strong>Harga:</strong> Rp 40.000</p></div></div>
+      <div class="item" data-name="Pakan Ikan Lele"><img src="pelet lele.jpg" alt="Pakan Ikan Lele"><div class="item-info"><p><strong>Nama Pakan:</strong> Pakan Ikan Lele</p><p><strong>Deskripsi:</strong> Pakan khusus untuk ikan lele agar cepat besar dan sehat.</p><p><strong>Harga:</strong> Rp 30.000</p></div></div>
+
+      <!-- dst hingga total 15 promo pakan -->
+
+    </div>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Informasi Ikan & Promo - Semua Hak Dilindungi
+  </footer>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        document.getElementById(tab.getAttribute('data-target')).classList.add('active');
+      });
+    });
+
+    function filterItems() {
+      const query = document.getElementById('search').value.toLowerCase();
+      document.querySelectorAll('.tab-content.active .item').forEach(item => {
+        const name = item.getAttribute('data-name').toLowerCase();
+        if (name.includes(query)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
